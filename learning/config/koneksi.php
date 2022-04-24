@@ -4,7 +4,7 @@
 $host	= "localhost";
 $user	= "root";
 $pass	= "";
-$db	= "learning";
+$db	= "tk_kanisius";
 $mysqli = new mysqli($host, $user, $pass, $db);
 
 
