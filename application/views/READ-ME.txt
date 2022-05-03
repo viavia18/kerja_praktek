@@ -1,6 +1,6 @@
-  =>  Template Name    : Kider - Preschool Website Template
+  =>  Template Name    : KidKinder - Kindergarten Website Template
 
-  =>  Template Link    : https://htmlcodex.com/preschool-website-template
+  =>  Template Link    : https://htmlcodex.com/kindergarten-website-template
 
   =>  Template License : https://htmlcodex.com/license (or read the LICENSE.txt file)
 

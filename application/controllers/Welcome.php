@@ -7,7 +7,7 @@ class Welcome extends CI_Controller
 	public function __construct()
     {
         parent::__construct();
-		$this->load->view('templates/header');
+		$this->load->view('templates/navbar');
 		$this->load->model('m_activity');
 		$this->load->model('m_visitor');
         $this->load->library('form_validation');
@@ -24,10 +24,11 @@ class Welcome extends CI_Controller
 		}
 		$data['activity'] = '';
 			$this->load->view('index', $data);
+		$this->load->view('templates/footer');
     }
 	public function beranda(){
 		
-        $this->load->view('index');
+       $this->load->view('index');
        $this->load->view('templates/footer');
 	}
 	public function profil(){
@@ -35,15 +36,15 @@ class Welcome extends CI_Controller
 		$this->load->view('templates/footer');
 	}
 	public function program(){
-		$this->load->view('classes');
+		$this->load->view('class');
 		$this->load->view('templates/footer');
 	}
 	public function galeri(){
-		$this->load->view('team');
+		$this->load->view('gallery');
 		$this->load->view('templates/footer');
 	}
 	public function event(){
-		$this->load->view('appointment');
+		$this->load->view('blog');
 		$this->load->view('templates/footer');
 	}
 	public function kontak(){
@@ -52,7 +53,7 @@ class Welcome extends CI_Controller
 	}
 	public function ppdb(){
 		$this->load->view('testimonial');
-		$this->load->view('templates/footer');
+		//$this->load->view('templates/footer');
 	}
 	public function id()
     {
