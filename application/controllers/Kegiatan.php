@@ -6,6 +6,7 @@ class Kegiatan extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+		$this->load->view('templates/navbar');
 		$this->load->model('m_activity');
         $this->load->library('form_validation');
         // $this->session->set_flashdata('not-login', 'Gagal!');

@@ -19,10 +19,7 @@ class Welcome extends CI_Controller
 	
     public function index()
     {
-		if (!$this->session->userdata('lang')) {
-			$this->session->set_userdata('lang', 'id');
-		}
-		$data['activity'] = '';
+		$data['activity'] = $this->m_activity->ambil_activity_tiga()->result();
 			$this->load->view('index', $data);
 		$this->load->view('templates/footer');
     }

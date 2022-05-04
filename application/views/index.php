@@ -5,7 +5,7 @@
                 <!--<h4 class="text-white mb-4 mt-5 mt-lg-0">Kids Learning Center</h4>-->
                 <h1 class="display-3 font-weight-bold text-white">Selamat Datang di TK Kanisius</h1>
                 <p class="text-white mb-4"></p>
-                <a href="" class="btn btn-secondary mt-1 py-3 px-5">Lihat Profil</a>
+                <a href="<?= base_url();?>Welcome/profil"class="btn btn-secondary mt-1 py-3 px-5">Lihat Profil</a>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
                 <img class="img-fluid mt-5" src="<?= base_url('assets/') ?>img/header.png" alt="">
@@ -405,63 +405,42 @@
     Testimonial End -->
 
 
-    <!-- Blog Start 
+    <!-- Blog Start -->
     <div class="container-fluid pt-5">
         <div class="container">
             <div class="text-center pb-2">
-                <p class="section-title px-5"><span class="px-2">Latest Blog</span></p>
-                <h1 class="mb-4">Latest Articles From Blog</h1>
+                <p class="section-title px-5"><span class="px-2">Berita/Event</span></p>
+                <h1 class="mb-4">Artikel Terbaru</h1>
             </div>
-            <div class="row pb-3">
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0 shadow-sm mb-2">
-                        <img class="card-img-top mb-2" src="<?= base_url('assets/') ?>img/blog-1.jpg" alt="">
-                        <div class="card-body bg-light text-center p-4">
-                            <h4 class="">Diam amet eos at no eos</h4>
-                            <div class="d-flex justify-content-center mb-3">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                            </div>
-                            <p>Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet stet...</p>
-                            <a href="" class="btn btn-primary px-4 mx-auto my-2">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0 shadow-sm mb-2">
-                        <img class="card-img-top mb-2" src="<?= base_url('assets/') ?>img/blog-2.jpg" alt="">
-                        <div class="card-body bg-light text-center p-4">
-                            <h4 class="">Diam amet eos at no eos</h4>
-                            <div class="d-flex justify-content-center mb-3">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                            </div>
-                            <p>Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet stet...</p>
-                            <a href="" class="btn btn-primary px-4 mx-auto my-2">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0 shadow-sm mb-2">
-                        <img class="card-img-top mb-2" src="<?= base_url('assets/') ?>img/blog-3.jpg" alt="">
-                        <div class="card-body bg-light text-center p-4">
-                            <h4 class="">Diam amet eos at no eos</h4>
-                            <div class="d-flex justify-content-center mb-3">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
-                            </div>
-                            <p>Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet stet...</p>
-                            <a href="" class="btn btn-primary px-4 mx-auto my-2">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+			<div class="row justify-content-center" data-aos="fade-up" data-aos-duration="1600">
+			<?php
+			foreach ($activity as $d) { 
+			echo '<div class="col-12 col-sm-4 col-lg-4">
+			<div class="single-latest-sermons mb-100">
+									<div class="card border-0 shadow-sm mb-2">
+										<a href="'.base_url("kegiatan/detailEvent/").$d->id.'"><img class="card-img-top mb-2" src="'.base_url("assets/img/").$d->image.'" alt=""></center></a>
+										<div class="card-body bg-light text-center p-4">
+										<a href="'.base_url('kegiatan/detailEvent/').$d->id.'"><h4>'.$d->title_ind.'</h4></a>
+										
+										<div class="d-flex justify-content-center mb-3">
+										<!-- Date -->
+										<div class="sermons-date">
+											<h6><span>'.substr(date("d-M-Y", strtotime($d->timestamp)),0,2).'</span>'.substr(date("d-M-Y", strtotime($d->timestamp)),3,3).'</h6>
+										</div>
+										</div>
+										
+										<p>'.substr(filter_var($d->content_ind, FILTER_SANITIZE_STRING),0,100).' . . .'.'</p>
+										<a href="'.base_url('kegiatan/detailEvent/').$d->id.'" class="btn btn-primary px-4 mx-auto my-2">Read More</a>
+								</div>
+							</div>
+						</div>
+					</div>';
+			}
+			?>
+            </div>    
+		</div>
     </div>
-    Blog End -->
+    <!-- Blog End -->
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
