@@ -27,18 +27,7 @@
                     <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos,
                         ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
                         dolor</p>
-                    <div class="row pt-2 pb-4">
-                        <div class="col-6 col-md-4">
-                            <img class="img-fluid rounded" src="<?= base_url('assets/') ?>img/about-2.jpg" alt="">
-                        </div>
-                        <div class="col-6 col-md-8">
-                            <ul class="list-inline m-0">
-                                <li class="py-2 border-top border-bottom"><i class="fa fa-check text-primary mr-3"></i>Labore eos amet dolor amet diam</li>
-                                <li class="py-2 border-bottom"><i class="fa fa-check text-primary mr-3"></i>Etsea et sit dolor amet ipsum</li>
-                                <li class="py-2 border-bottom"><i class="fa fa-check text-primary mr-3"></i>Diam dolor diam elitripsum vero.</li>
-                            </ul>
-                        </div>
-                    </div>
+                    
                     <a href="<?= base_url();?>Welcome/profil" class="btn btn-primary mt-2 py-2 px-4">Selengkapnya...</a>
                 </div>
             </div>
@@ -430,7 +419,7 @@
 										</div>
 										
 										<p>'.substr(filter_var($d->content_ind, FILTER_SANITIZE_STRING),0,100).' . . .'.'</p>
-										<a href="'.base_url('kegiatan/detailEvent/').$d->id.'" class="btn btn-primary px-4 mx-auto my-2">Read More</a>
+										<a href="'.base_url('kegiatan/detailEvent/').$d->id.'" class="btn btn-primary px-4 mx-auto my-2">Selengkapnya...</a>
 								</div>
 							</div>
 						</div>
@@ -456,6 +445,3 @@
 
     <!-- Template Javascript -->
     <script src="<?= base_url('assets/') ?>js/main.js"></script>
-</body>
-
-</html>

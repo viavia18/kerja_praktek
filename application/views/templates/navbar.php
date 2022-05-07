@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>KidKinder - Kindergarten Website Template</title>
+    <title>TK Kanisius Yogyakarta</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -33,8 +33,8 @@
     <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-light navbar-light sticky-top py-3 py-lg-0 px-0 px-lg-5">
             <a href="<?= base_url();?>" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
-                <i class="flaticon-043-teddy-bear"></i>
-                <span class="text-primary">TK Kanisius</span>
+			<img src="<?= base_url('assets/') ?>img/logo.png" alt="">
+                <!--<span class="text-primary">TK Kanisius</span>-->
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
