@@ -7,7 +7,7 @@ if (@$_SESSION['Admin']) {}
 <?php
 if (@$_SESSION['Admin']) {
 $sesi = @$_SESSION['Admin'];
-$sql = mysqli_query($con,"SELECT * FROM users WHERE id = '$sesi'") or die(mysqli_error($con));
+$sql = mysqli_query($con,"SELECT * FROM user WHERE id = '$sesi'") or die(mysqli_error($con));
 $data = mysqli_fetch_array($sql);
 ?>
 
@@ -93,12 +93,12 @@ $data = mysqli_fetch_array($sql);
 						<li class="nav-item">
 							<a class="nav-link" href="?page=case">
 							<i class="fa fa-file" aria-hidden="true" ></i> &nbsp;
-							<span class="menu-title">CASE</span></a>
+							<span class="menu-title">GALERI FOTO</span></a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="?page=visitors">
 							<i class="fa fa-eye" aria-hidden="true" ></i> &nbsp;
-							<span class="menu-title">VISITORS</span></a>
+							<span class="menu-title">PROGRAM</span></a>
 						</li>
 						<hr>
 						<li class="nav-item purchase-button">

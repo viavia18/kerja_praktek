@@ -3,7 +3,7 @@ include 'config/db.php';
 $keg = mysqli_query($con,"select * from activities");
 $jum_keg = mysqli_num_rows($keg);
 
-$dos = mysqli_query($con,"select * from users where level='1'");
+$dos = mysqli_query($con,"select * from user where level='1'");
 $jum_dos = mysqli_num_rows($dos);
 
 $case = mysqli_query($con,"select * from cases");
@@ -26,14 +26,14 @@ $jum_case = mysqli_num_rows($case);
 								<i class="fa fa-pencil icon-lg text-white"></i>
 							</div>
 							<div class="float-right">
-								<p class="card-text text-right font-weight-bold text-white">Jumlah Kegiatan</p>
+								<p class="card-text text-right font-weight-bold text-white"> kegiatan ->Jumlah Event/Berita</p>
 								<div class="fluid-container">
 								<h3 class="card-title font-weight-bold text-center mb-0 text-white"><?=$jum_keg; ?></h3>
 								</div>
 							</div>
 						</div>
 						<hr>            
-						<a href="?page=kegiatan" class="text-white"><i class="fa fa-chevron-circle-right text-white" aria-hidden="true"></i> Views</a>           
+						<a href="?page=kegiatan" class="text-white"><i class="fa fa-chevron-circle-right text-white" aria-hidden="true"></i> Tampilkan</a>           
 					</div>
 				</div>
 			</div>
@@ -45,14 +45,14 @@ $jum_case = mysqli_num_rows($case);
 								<i class="fa fa-pencil icon-lg text-white"></i>
 							</div>
 							<div class="float-right">
-								<p class="card-text text-right font-weight-bold text-white">Jumlah Dosen</p>
+								<p class="card-text text-right font-weight-bold text-white">Jumlah dosen -> Jumlah Staff</p>
 								<div class="fluid-container">
 								<h3 class="card-title font-weight-bold text-center mb-0 text-white"><?=$jum_dos; ?></h3>
 								</div>
 							</div>
 						</div>
 						<hr>            
-						<a href="?page=dosen" class="text-white"><i class="fa fa-chevron-circle-right text-white" aria-hidden="true"></i> Views</a>           
+						<a href="?page=dosen" class="text-white"><i class="fa fa-chevron-circle-right text-white" aria-hidden="true"></i> Tampilkan</a>           
 					</div>
 				</div>
 			</div>
@@ -64,14 +64,14 @@ $jum_case = mysqli_num_rows($case);
 								<i class="fa fa-pencil icon-lg text-white"></i>
 							</div>
 							<div class="float-right">
-								<p class="card-text text-right font-weight-bold text-white">Jumlah Case</p>
+								<p class="card-text text-right font-weight-bold text-white">Jumlah Case -> Galeri Foto </p>
 								<div class="fluid-container">
 								<h3 class="card-title font-weight-bold text-center mb-0 text-white"><?=$jum_case; ?></h3>
 								</div>
 							</div>
 						</div>
 						<hr>            
-						<a href="?page=case" class="text-white"><i class="fa fa-chevron-circle-right text-white" aria-hidden="true"></i> Views</a>           
+						<a href="?page=case" class="text-white"><i class="fa fa-chevron-circle-right text-white" aria-hidden="true"></i> Tampilkan</a>           
 					</div>
 				</div>
 			</div>

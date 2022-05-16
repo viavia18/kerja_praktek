@@ -2,7 +2,7 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js">
 	</script>
 	<h4>
-	Kegiatan <small class="text-muted">/ Tambah</small>
+	Berita atau Event <small class="text-muted">/ Tambah</small>
 	</h4>
 	<hr>
 	<div class="row">
@@ -11,7 +11,7 @@
 				<div class="col-12 col-xs-12">
 					<div class="card">
 						<div class="card-body">
-							<h4 class="card-title">Pengaturan Kegiatan</h4>
+							<h4 class="card-title">Pengaturan Berita</h4>
 							<form class="forms-sample" action="index.php?page=kegiatan&act=proses" method="post" enctype="multipart/form-data">
 								<div class="row">
 									<div class="col-lg-6 col-sm-6">
@@ -38,7 +38,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="ckeditor">Deskripsi Kegiatan </label>
+									<label for="ckeditor">Deskripsi Event </label>
 									<textarea name="materi" class="ckeditor"></textarea>
 									<script type="text/javascript">
 										CKEDITOR.replace( 'materi' );

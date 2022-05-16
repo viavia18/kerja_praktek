@@ -5,12 +5,12 @@
 	}
 	</style>
 	<h4>
-	<b>Kegiatan</b>
+	<b>Berita atau Event</b>
 	</h4>
 	<div class="row purchace-popup">
 		<div class="col-md-12 col-xs-12">
 		<span class="d-flex alifn-items-center">
-		<a class="btn btn-dark" href="?page=kegiatan&act=add"> <i class="fa fa-plus"></i> Tambah Kegiatan</a>
+		<a class="btn btn-dark" href="?page=kegiatan&act=add"> <i class="fa fa-plus"></i> Tambah Artikel</a>
 		</span>
 		</div>
 	</div>
@@ -20,23 +20,23 @@
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			<strong>Petunjuk LANGKAH!</strong> <br> 
 			<ul>
-				<li> Klik <b>Tambah Kegiatan</b> Untuk Menambahkan Kegiatan.</li>
-				<li> Klik <b>Edit</b> Untuk Mengedit Kegiatan.</li>
-				<li> Klik <b>Hapus</b> Untuk Menghapus Kegiatan.</li>
+				<li> Klik <b>Tambah Artikel</b> Untuk Menambahkan Artikel.</li>
+				<li> Klik <b>Edit</b> Untuk Mengedit Artikel.</li>
+				<li> Klik <b>Hapus</b> Untuk Menghapus Artikel.</li>
 			</ul>
 	
 	
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<h4 class="card-title">Data Kegiatan</h4>
+					<h4 class="card-title">Data Artikel</h4>
 					<div class="table-responsive">
 						<table class="table table-striped table-hover table-condensed" id="data">
 							<thead>
 								<tr>
 									<th>#</th>
-									<th style="text-align: left;">Tanggal Kegiatan</th>
-									<th>Nama Kegiatan (ID)</th>
+									<th style="text-align: left;">Tanggal Atikel</th>
+									<th>Nama Artikel</th>
 									<th>Opsi</th>
 								</tr>
 							</thead>

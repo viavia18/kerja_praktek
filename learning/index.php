@@ -9,7 +9,7 @@ include 'config/db.php';
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <link rel="icon" href="../assets/img/usd.png" type="image/png">
-    <title>School of Busines Sanata Dharma</title>
+    <title>TK KANISIUS</title>
     <link rel="icon" href="../assets/img/usd.png" type="image/png">
     <!-- General CSS Files -->
 	
@@ -98,7 +98,7 @@ include 'config/db.php';
    $email = trim(mysqli_real_escape_string($con, $_POST['email']));
    $pass = sha1($_POST['password']); 
 
-      $sql = mysqli_query($con,"SELECT * FROM users WHERE username='$email' AND password='$pass'") or die(mysqli_error($con)) ;
+      $sql = mysqli_query($con,"SELECT * FROM user WHERE username='$email' AND password='$pass'") or die(mysqli_error($con)) ;
       $data = mysqli_fetch_array($sql);
       $level = $data ['level'];
 	  $id = $data ['id'];
@@ -107,7 +107,7 @@ include 'config/db.php';
       if ($cek >0 ){
 		  if($level==0){
 			  $_SESSION['Admin'] = $id;
-              $_SESSION['upload_gambar']= TRUE;
+              //$_SESSION['upload_gambar']= TRUE;
 			  echo "
                   <script type='text/javascript'>
                   window.location.replace('admin/index.php');
