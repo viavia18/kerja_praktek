@@ -1,7 +1,7 @@
 <?php 
 $sesi = @$_SESSION['Admin'];
 
-$edit= mysqli_query($con,"SELECT * FROM users WHERE id='$sesi' ");
+$edit= mysqli_query($con,"SELECT * FROM user WHERE id='$sesi' ");
 foreach ($edit as $data)
 ?>
 
@@ -143,7 +143,7 @@ foreach ($edit as $data)
 							
 							if ($pindah) {
 								unlink($image_old);
-								$save= mysqli_query($con,"UPDATE users SET
+								$save= mysqli_query($con,"UPDATE user SET
 													nama = '$nama',
 													email = '$email',
 													image = '$nama_input'
@@ -158,7 +158,7 @@ foreach ($edit as $data)
 						}
 					}
 					else{
-						$save = mysqli_query($con,"UPDATE users SET
+						$save = mysqli_query($con,"UPDATE user SET
 													nama = '$nama',
 													email = '$email'
 												  WHERE id = '$id'");
@@ -182,7 +182,7 @@ foreach ($edit as $data)
 					
 					if($data['password']==$oldpassword){
 						if($newpassword==$confirmpassword){
-							$save= mysqli_query($con,"UPDATE users SET
+							$save= mysqli_query($con,"UPDATE user SET
 														password = '$newpassword'
 													  WHERE id = '$id'");
 							if ($save) {

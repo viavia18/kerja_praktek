@@ -1,12 +1,12 @@
 <?php
-$edit= mysqli_query($con,"SELECT * FROM activities WHERE id='$_GET[id]' ");
+$edit= mysqli_query($con,"SELECT * FROM artikel WHERE id='$_GET[id]' ");
 foreach ($edit as $d){
 	$target = '../../assets/img/img_Activities/';
 	$image_old = $target.$d['image'];
 	unlink($image_old);
 }
 
-$del = mysqli_query($con,"DELETE FROM activities WHERE id='$_GET[id]' ") or die(mysqli_error($con));
+$del = mysqli_query($con,"DELETE FROM artikel WHERE id='$_GET[id]' ") or die(mysqli_error($con));
 if ($del) {	
 
 	echo "
@@ -21,7 +21,7 @@ if ($del) {
 	});     
 	},10);  
 	window.setTimeout(function(){ 
-	window.location.replace('?page=kegiatan');
+	window.location.replace('?page=artikel');
 	} ,3000);   
 	</script>";
 }

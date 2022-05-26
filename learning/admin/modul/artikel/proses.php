@@ -1,7 +1,7 @@
 <?php 
 
 
-	if (isset($_POST['save_kegiatan'])) {
+	if (isset($_POST['save_artikel'])) {
 		$nama = filter_input(INPUT_POST, 'nama', FILTER_SANITIZE_STRING);
 		//$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 		$materi = $_POST['materi'];
@@ -15,7 +15,7 @@
 		$size_gambar = @$_FILES['foto']['size'];
 		$nama_input = md5($nama_gambar.$size_gambar).'.'.$extensions;
 		
-		$save1 = mysqli_query($con,"INSERT INTO event (judul, konten, tanggal)
+		$save1 = mysqli_query($con,"INSERT INTO artikel (judul, konten, tanggal)
 						VALUES('$nama', '$materi', '$date')");
 		
 		if(!empty($sumber)){
@@ -28,8 +28,8 @@
 			{
 				$pindah = move_uploaded_file($sumber, $target.$nama_input);
 				if ($pindah) {
-					$save = mysqli_query($con,"UPDATE event
-			                    SET gambar='$nama_input'
+					$save = mysqli_query($con,"UPDATE artikel
+			                    SET foto='$nama_input'
 								WHERE judul='$nama' AND konten='$materi' AND tanggal='$date'");
 				}	
 				unlink($sumber);
@@ -44,13 +44,13 @@
 		if ($save1) {
 			echo " <script>
 			alert('Data Berhasil disimpan !');
-			window.location='?page=kegiatan';
+			window.location='?page=artikel';
 			</script>";
 		}
 		
 	}
 							
-	if (isset($_POST['update_kegiatan'])) {
+	if (isset($_POST['update_artikel'])) {
 		
 		$id = $_POST['id'];
 		$nama = filter_input(INPUT_POST, 'nama', FILTER_SANITIZE_STRING);
@@ -67,7 +67,7 @@
 		$size_gambar = @$_FILES['foto']['size'];
 		$nama_input = md5($nama_gambar.$size_gambar).'.'.$extensions;
 		
-		$save1 = mysqli_query($con,"UPDATE event SET
+		$save1 = mysqli_query($con,"UPDATE artikel SET
 								judul = '$nama',
 								konten = '$materi',
 								tanggal = '$date'
@@ -84,8 +84,8 @@
 				$pindah = move_uploaded_file($sumber, $target.$nama_input);
 				if ($pindah) {
 					unlink($image_old);
-					$save= mysqli_query($con,"UPDATE event SET
-										gambar = '$nama_input'
+					$save= mysqli_query($con,"UPDATE artikel SET
+										foto = '$nama_input'
 									WHERE id = '$id'");
 				}	
 				unlink($sumber);
@@ -99,7 +99,7 @@
 		if ($save1) {
 			echo " <script>
 			alert('Data Berhasil disimpan !');
-			window.location='?page=kegiatan';
+			window.location='?page=artikel';
 			</script>";
 		}
 	}

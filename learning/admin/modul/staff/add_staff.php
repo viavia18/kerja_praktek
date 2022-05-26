@@ -19,13 +19,18 @@
 								</div>
 		
 								<div class="form-group">
+								<label>Email</label>
+								<input name="email" type="email" class="form-control" placeholder="Email">
+								</div>
+								
+								<div class="form-group">
 								<label>Kontak</label>
-								<input name="email" type="email" class="form-control" placeholder="Kontak">
+								<input name="kontak" type="text" class="form-control" placeholder="No Telepon">
 								</div>
 								
 								<div class="form-group">
 								<label>Jabatan</label>
-								<input name="nik" type="text" class="form-control" placeholder="Jabatan">
+								<input name="jabatan" type="text" class="form-control" placeholder="Jabatan">
 								</div>
 		
 								<div class="form-group">
@@ -33,19 +38,20 @@
 								<input name="foto" type="file" class="form-control">
 								</div>
 		
-								<button name="save_dosen" type="submit" class="btn btn-success mr-2">Simpan</button>
+								<button name="save_staff" type="submit" class="btn btn-success mr-2">Simpan</button>
 								<button class="btn btn-light">Batal</button>
 							</form>
 	
 							<?php 
 			
-							if (isset($_POST['save_dosen'])) {
-								$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-								$pass = sha1($_POST['pass']);
-								$nik = filter_input(INPUT_POST, 'nik', FILTER_SANITIZE_STRING);
+							if (isset($_POST['save_staff'])) {
+								//$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+								//$pass = sha1($_POST['pass']);
+								$jabatan = filter_input(INPUT_POST, 'jabatan', FILTER_SANITIZE_STRING);
 								$nama = filter_input(INPUT_POST, 'nama', FILTER_SANITIZE_STRING);
+								$kontak = filter_input(INPUT_POST, 'kontak', FILTER_SANITIZE_NUMBER_INT);
 								$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-								$level = 1;
+								//$level = 1;
 								
 								$sumber = @$_FILES['foto']['tmp_name'];
 								
@@ -69,12 +75,12 @@
 										$pindah = move_uploaded_file($sumber, $target.$nama_input);
 										
 										if ($pindah) {
-											$save= mysqli_query($con,"INSERT INTO users (`username`, `password`, `nik`, `nama`, `email`, `image`, `level`)
-																	VALUES('$username', '$pass', '$nik', '$nama', '$email', '$nama_input', '$level')");
+											$save= mysqli_query($con,"INSERT INTO staff (`nama`,`foto`, `jabatan`, `email`, `kontak` )
+																	VALUES('$nama', '$foto', '$jabatan','$email', '$kontak')");
 											if ($save) {
 												echo " <script>
 												alert('Data Berhasil disimpan !');
-												window.location='?page=dosen';
+												window.location='?page=staff';
 												</script>";
 											}
 										}	
@@ -87,12 +93,12 @@
 									}
 								}
 								else {
-									$save= mysqli_query($con,"INSERT INTO users (`username`, `password`, `nik`, `nama`, `email`, `level`)
-															VALUES('$username', '$pass', '$nik', '$nama', '$email', '$level')");
+									$save= mysqli_query($con,"INSERT INTO staff (`nama`,`foto`, `jabatan`, `email`, `kontak`)
+															VALUES('$nama', '$foto', '$jabatan', '$email', '$kontak')");
 									if ($save) {
 										echo " <script>
 										alert('Data Berhasil disimpan !');
-										window.location='?page=dosen';
+										window.location='?page=staff';
 										</script>";
 									}
 								}

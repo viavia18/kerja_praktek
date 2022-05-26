@@ -407,19 +407,19 @@
 			echo '<div class="col-12 col-sm-4 col-lg-4">
 			<div class="single-latest-sermons mb-100">
 									<div class="card border-0 shadow-sm mb-2">
-										<a href="'.base_url("kegiatan/detailEvent/").$d->id.'"><img class="card-img-top mb-2" src="'.base_url("assets/img/").$d->image.'" alt=""></center></a>
+										<a href="'.base_url("event/detailEvent/").$d->id.'"><img class="card-img-top mb-2" src="'.base_url("assets/img/").$d->foto.'" alt=""></center></a>
 										<div class="card-body bg-light text-center p-4">
-										<a href="'.base_url('kegiatan/detailEvent/').$d->id.'"><h4>'.$d->title_ind.'</h4></a>
+										<a href="'.base_url('event/detailEvent/').$d->id.'"><h4>'.$d->judul.'</h4></a>
 										
 										<div class="d-flex justify-content-center mb-3">
 										<!-- Date -->
 										<div class="sermons-date">
-											<h6><span>'.substr(date("d-M-Y", strtotime($d->timestamp)),0,2).'</span>'.substr(date("d-M-Y", strtotime($d->timestamp)),3,3).'</h6>
+											<h6><span>'.substr(date("d-M-Y", strtotime($d->tanggal)),0,2).'</span>'.substr(date("d-M-Y", strtotime($d->tanggal)),3,3).'</h6>
 										</div>
 										</div>
 										
-										<p>'.substr(filter_var($d->content_ind, FILTER_SANITIZE_STRING),0,100).' . . .'.'</p>
-										<a href="'.base_url('kegiatan/detailEvent/').$d->id.'" class="btn btn-primary px-4 mx-auto my-2">Selengkapnya...</a>
+										<p>'.substr(filter_var($d->konten, FILTER_SANITIZE_STRING),0,100).' . . .'.'</p>
+										<a href="'.base_url('event/detailEvent/').$d->id.'" class="btn btn-primary px-4 mx-auto my-2">Selengkapnya...</a>
 								</div>
 							</div>
 						</div>

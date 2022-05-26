@@ -2,13 +2,6 @@
 <html lang="en">
 
 <head>
-
-    <!-- Required meta tags -->
-   <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="<?= base_url('assets/') ?>img/usd.png" type="image/png">
-    <title>School of Business Sanata Dharma University</title>
-    <!-- Bootstrap CSS -->
 	<style>
 	 label {
      margin: 0;
@@ -111,44 +104,6 @@
 
 <body style="overflow-x:hidden;background-color:#fbf9fa;">
 
-
-    <!-- Start Navigation Bar -->
-    <header class="header_area" style="background-color: white !important;">
-        <div class="main_menu">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="<?= base_url('welcome') ?>"><img src="<?= base_url('assets/') ?>img/logo.png" alt=""></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item" id="nav"><a class="nav-link" href="<?= base_url('welcome') ?>">Home</a></li>
-                            <li class="nav-item" id="navtentang"><a class="nav-link" href="<?= base_url('materi/elearning') ?>">E-learning</a>
-                            </li>
-                            <li class="nav-item" id="navkontak"><a class="nav-link" href="<?= base_url('welcome/kegiatan') ?>">Event</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="<?= base_url('welcome/profile') ?>">Profile</a></li>
-							<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Language </a>
-							<div class="dropdown-menu">
-								<a class="dropdown-item" href="<?= base_url('welcome') ?>/id">Indonesia <img src="<?= base_url('assets/') ?>img/id.png" alt=""></a>
-								<a class="dropdown-item" href="<?= base_url('welcome') ?>/en">English <img src="<?= base_url('assets/') ?>img/en.png" alt=""></a>
-							</div>
-							</li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <!-- End Navigation Bar -->
-
-
     <!-- Start Greeting Cards -->
 	
     <div class="container">
@@ -161,12 +116,12 @@
 								<div class="col-12">
 									<nav aria-label="breadcrumb">
 										<ol class="breadcrumb">
-											<li class="breadcrumb-item"><a href="<?= base_url('/') ?>">Home</a></li>
-											<li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('/welcome/kegiatan') ?>">Event</a></li>
+											<li class="breadcrumb-item"><a href="<?= base_url('/') ?>">Beranda</a></li>
+											<li class="breadcrumb-item" aria-current="page"><a href="<?= base_url('/welcome/event') ?>">Berita atau Event</a></li>
 											<li class="breadcrumb-item active" aria-current="page">
 											<?php 
 												foreach ($activity as $d) { 
-													echo $d->title_en;
+													echo $d->judul;
 												}
 											?>
 											</li>
@@ -179,14 +134,14 @@
 					<h2>
 					<?php 
 						foreach ($activity as $d) { 
-							echo $d->title_en;
+							echo $d->judul;
 					?>
 					</h2>
 					<br>
 					<div>
 						<img width="80%" height="200px" src="
 						<?php
-							echo base_url('assets/img/img_Activities/').$d->image;
+							echo base_url('assets/img/').$d->foto;
 						?>" alt="">
 					</div>
 						
@@ -194,13 +149,13 @@
 						
 						<p><i class="fa fa-calendar" aria-hidden="true"></i>
 						<?php
-							echo date("l, d-F-Y", strtotime($d->timestamp));}
+							echo date("l, d F Y", strtotime($d->tanggal));}
 						?>
 						</p>
 						<hr width="80%">
 						<p style="text-align:left;font-size:16px;  text-align:justify;text-justify:inter-word;">
 						<?php
-							echo $d->content_en;
+							echo $d->konten;
 						?>
 						</p>
                 </div>
@@ -224,7 +179,8 @@
                             <p class=" card-text">
                                 <?= substr($u->deskripsi, 0, 100); ?>&nbsp;.&nbsp;.&nbsp;.&nbsp;.&nbsp;.&nbsp;.&nbsp;.&nbsp;.
                             </p>
-                            <a href="<?php echo site_url('materi/belajar/' . $u->id); ?>" class="btn btn-white">Start learning!</a>
+                            <a href="<?php echo site_url('materi/belajar/' . $u->id); ?>" class="btn btn-white">Pelajari
+                                Sekarang !</a>
                         </div>
                     </div>
                 </div>

@@ -10,7 +10,7 @@
 	<div class="row purchace-popup">
 		<div class="col-md-12 col-xs-12">
 		<span class="d-flex alifn-items-center">
-		<a class="btn btn-dark" href="?page=kegiatan&act=add"> <i class="fa fa-plus"></i> Tambah Artikel</a>
+		<a class="btn btn-dark" href="?page=artikel&act=add"> <i class="fa fa-plus"></i> Tambah Artikel</a>
 		</span>
 		</div>
 	</div>
@@ -35,23 +35,25 @@
 							<thead>
 								<tr>
 									<th>#</th>
-									<th style="text-align: left;">Tanggal Atikel</th>
-									<th>Nama Artikel</th>
+									<th style="text-align: left;">Tanggal Artikel</th>
+									<th>Judul Artikel</th>
+									<th>Isi Artikel</th>
 									<th>Opsi</th>
 								</tr>
 							</thead>
 							<tbody>
 								<?php 
 								$no=1;
-								$sql = mysqli_query($con,"SELECT * FROM event");
+								$sql = mysqli_query($con,"SELECT * FROM artikel");
 								foreach ($sql as $d) { ?>
 								<tr>								
 									<td width="50"><b><?=$no++; ?>.</b> </td>
 									<td><?=date("d-m-Y", strtotime($d['tanggal']));?> </td>
 									<td><?=$d['judul']?> </td>
+									<td><?=$d['konten']?> </td>
 									<td>
-										<a href="?page=kegiatan&act=kegiatanedit&id=<?=$d['id']; ?>" class="btn btn-dark btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-										<a href="?page=kegiatan&act=kegiatandel&id=<?=$d['id']; ?>" onclick="return confirm('Yakin Hapus Data ?')" class="btn btn-dark btn-sm text-danger"><i class="fa fa-trash"></i> Hapus </a>
+										<a href="?page=artikel&act=artikeledit&id=<?=$d['id']; ?>" class="btn btn-dark btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+										<a href="?page=artikel&act=artikeldel&id=<?=$d['id']; ?>" onclick="return confirm('Yakin Hapus Data ?')" class="btn btn-dark btn-sm text-danger"><i class="fa fa-trash"></i> Hapus </a>
 									</td>
 								</tr>
 								<?php } ?>  

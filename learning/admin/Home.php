@@ -1,10 +1,10 @@
 <?php 
 include 'config/db.php';
-$keg = mysqli_query($con,"select * from activities");
-$jum_keg = mysqli_num_rows($keg);
+$artikel = mysqli_query($con,"select * from artikel");
+$jum_artikel = mysqli_num_rows($artikel);
 
-$dos = mysqli_query($con,"select * from user where level='1'");
-$jum_dos = mysqli_num_rows($dos);
+$staff = mysqli_query($con,"select * from staff");
+$jum_staff = mysqli_num_rows($staff);
 
 $case = mysqli_query($con,"select * from cases");
 $jum_case = mysqli_num_rows($case);
@@ -26,14 +26,14 @@ $jum_case = mysqli_num_rows($case);
 								<i class="fa fa-pencil icon-lg text-white"></i>
 							</div>
 							<div class="float-right">
-								<p class="card-text text-right font-weight-bold text-white"> kegiatan ->Jumlah Event/Berita</p>
+								<p class="card-text text-right font-weight-bold text-white"> Jumlah Artikel</p>
 								<div class="fluid-container">
-								<h3 class="card-title font-weight-bold text-center mb-0 text-white"><?=$jum_keg; ?></h3>
+								<h3 class="card-title font-weight-bold text-center mb-0 text-white"><?=$jum_artikel; ?></h3>
 								</div>
 							</div>
 						</div>
 						<hr>            
-						<a href="?page=kegiatan" class="text-white"><i class="fa fa-chevron-circle-right text-white" aria-hidden="true"></i> Tampilkan</a>           
+						<a href="?page=artikel" class="text-white"><i class="fa fa-chevron-circle-right text-white" aria-hidden="true"></i> Tampilkan</a>           
 					</div>
 				</div>
 			</div>
@@ -45,14 +45,14 @@ $jum_case = mysqli_num_rows($case);
 								<i class="fa fa-pencil icon-lg text-white"></i>
 							</div>
 							<div class="float-right">
-								<p class="card-text text-right font-weight-bold text-white">Jumlah dosen -> Jumlah Staff</p>
+								<p class="card-text text-right font-weight-bold text-white">Jumlah Staff</p>
 								<div class="fluid-container">
-								<h3 class="card-title font-weight-bold text-center mb-0 text-white"><?=$jum_dos; ?></h3>
+								<h3 class="card-title font-weight-bold text-center mb-0 text-white"><?=$jum_staff; ?></h3>
 								</div>
 							</div>
 						</div>
 						<hr>            
-						<a href="?page=dosen" class="text-white"><i class="fa fa-chevron-circle-right text-white" aria-hidden="true"></i> Tampilkan</a>           
+						<a href="?page=staff" class="text-white"><i class="fa fa-chevron-circle-right text-white" aria-hidden="true"></i> Tampilkan</a>           
 					</div>
 				</div>
 			</div>

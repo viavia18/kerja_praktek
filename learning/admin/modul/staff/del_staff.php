@@ -1,12 +1,12 @@
 <?php
-$edit= mysqli_query($con,"SELECT * FROM users WHERE id='$_GET[id]' ");
+$edit= mysqli_query($con,"SELECT * FROM staff WHERE id='$_GET[id]' ");
 foreach ($edit as $d){
 	$target = '../vendor/images/img_Users/';
 	$image_old = $target.$d['image'];
 	unlink($image_old);
 }
 
-$del = mysqli_query($con,"DELETE FROM users WHERE id='$_GET[id]' ") or die(mysqli_error($con));
+$del = mysqli_query($con,"DELETE FROM staff WHERE id='$_GET[id]' ") or die(mysqli_error($con));
 if ($del) {	
 
 	echo "
@@ -21,7 +21,7 @@ if ($del) {
 	});     
 	},10);  
 	window.setTimeout(function(){ 
-	window.location.replace('?page=dosen');
+	window.location.replace('?page=staff');
 	} ,3000);   
 	</script>";
 }

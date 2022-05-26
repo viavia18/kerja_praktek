@@ -79,13 +79,13 @@ $data = mysqli_fetch_array($sql);
 							<a class="nav-link" href="index.php"><img class="menu-icon" src="../vendor/images/menu_icons/01.png" alt="menu icon"><span class="menu-title">DASHBOARD</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="?page=kegiatan"> 
+							<a class="nav-link" href="?page=artikel"> 
 							<i class="fa fa-newspaper-o icon-md"style="font-size:20px;"></i> &nbsp; 
 							<span class="menu-title"> BERITA/EVENT</span>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="?page=dosen"> 
+							<a class="nav-link" href="?page=staff"> 
 							<i class="fa fa-spin fa-gear icon-md" style="font-size:20px;"></i> &nbsp; 
 							<span class="menu-title"> STAFF</span>
 							</a>
@@ -116,33 +116,33 @@ $data = mysqli_fetch_array($sql);
 					$act = @$_GET['act'];
 			
 					
-					if ($page=='dosen') {
+					if ($page=='staff') {
 						if ($act=='') {
-						include 'modul/dosen/data_dosen.php';
+						include 'modul/staff/data_staff.php';
 						}elseif ($act=='del') {
-						include 'modul/dosen/del_dosen.php';
+						include 'modul/staff/del_staff.php';
 						}elseif ($act=='confirm') {
-						include 'modul/dosen/confir_dosen.php';
+						include 'modul/staff/confir_staff.php';
 						}elseif ($act=='unconfirm') {
-						include 'modul/dosen/unconfir_dosen.php';
+						include 'modul/staff/unconfir_staff.php';
 						}elseif ($act=='proses') {
-						include 'modul/dosen/proses.php';
+						include 'modul/staff/proses.php';
 						}elseif ($act=='add') {
-						include 'modul/dosen/add_dosen.php';
+						include 'modul/staff/add_staff.php';
 						}elseif ($act=='edit') {
-						include 'modul/dosen/edit_dosen.php';
+						include 'modul/staff/edit_staff.php';
 					}
-					}elseif ($page=='kegiatan') {
+					}elseif ($page=='artikel') {
 						if ($act=='') {
-						include 'modul/kegiatan/data_kegiatan.php';
+						include 'modul/artikel/data_artikel.php';
 						}elseif ($act=='add') {
-						include 'modul/kegiatan/add_kegiatan.php';
-						}elseif ($act=='kegiatanedit') {
-						include 'modul/kegiatan/edit_kegiatan.php';
-						}elseif ($act=='kegiatandel') {
-						include 'modul/kegiatan/del_kegiatan.php';
+						include 'modul/artikel/add_artikel.php';
+						}elseif ($act=='artikeledit') {
+						include 'modul/artikel/edit_artikel.php';
+						}elseif ($act=='artikeldel') {
+						include 'modul/artikel/del_artikel.php';
 						}elseif ($act=='proses') {
-						include 'modul/kegiatan/proses.php';
+						include 'modul/artikel/proses.php';
 						}
 					}elseif ($page=='case') {
 					if ($act=='') {

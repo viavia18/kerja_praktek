@@ -12,12 +12,12 @@
 					<div class="card">
 						<div class="card-body">
 							<h4 class="card-title">Pengaturan Berita</h4>
-							<form class="forms-sample" action="index.php?page=kegiatan&act=proses" method="post" enctype="multipart/form-data">
+							<form class="forms-sample" action="index.php?page=artikel&act=proses" method="post" enctype="multipart/form-data">
 								<div class="row">
 									<div class="col-lg-6 col-sm-6">
 										<div class="form-group">
-											<label>Nama Kegiatan </label>
-											<input type="text" name="nama" class="form-control" placeholder="Nama Kegiatan">
+											<label>Judul Artikel </label>
+											<input type="text" name="nama" class="form-control" placeholder="Judul Artikel">
 										</div>
 									</div>
 								</div>	
@@ -32,13 +32,13 @@
 								<div class="row">
 									<div class="col-lg-6 col-sm-6">
 										<div class="form-group">
-											<label>Gambar</label>
+											<label>Foto</label>
 											<input name="foto" type="file" class="form-control">
 										</div>
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="ckeditor">Deskripsi Event </label>
+									<label for="ckeditor">Isi Artikel </label>
 									<textarea name="materi" class="ckeditor"></textarea>
 									<script type="text/javascript">
 										CKEDITOR.replace( 'materi' );
@@ -46,7 +46,7 @@
 									</script>
 								</div>
 								<hr>
-								<button type="submit" name="save_kegiatan" class="btn btn-info mr-2">Simpan</button>
+								<button type="submit" name="save_artikel" class="btn btn-info mr-2">Simpan</button>
 								<a href="javascript:history.back()" class="btn btn-danger">Batal</a>
 							</form>
 					

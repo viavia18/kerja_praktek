@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                 <p class="card-description">
-                <a href="?page=dosen&act=add" class="btn btn-info text-white pull-right"><i class="fa fa-plus"></i> Tambah</a> <br>
+                <a href="?page=staff&act=add" class="btn btn-info text-white pull-right"><i class="fa fa-plus"></i> Tambah</a> <br>
                 </p>
                 <h4 class="card-title">Data Staff</h4>
                     <div class="table-responsive">
@@ -16,6 +16,7 @@
                         <tr>
                         <th>No.</th>  
                         <th>Nama Staff</th> 
+						<th>Email</th>
 						<th>Kontak</th>
 						<th>Jabatan</th>
                         <th>Opsi</th>                     
@@ -24,16 +25,17 @@
                         <tbody>
                         <?php 
                         $no=1;
-                        $sql = mysqli_query($con,"SELECT * FROM users WHERE level='1'");
+                        $sql = mysqli_query($con,"SELECT * FROM staff");
                         foreach ($sql as $d) { ?>
                         <tr>
                             <td width="50"><b><?=$no++; ?>.</b> </td>
 							<td><?=$d['nama']?> </td>
-                            <td><?=$d['email']?> </td>
-							<td><?=$d['nik']?> </td>
+							<td><?=$d['email']?> </td>
+                            <td><?=$d['kontak']?> </td>
+							<td><?=$d['jabatan']?> </td>
                             <td>
-                                <a href="?page=dosen&act=edit&id=<?=$d['id']?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit</a>
-                           <a href="?page=dosen&act=del&id=<?=$d['id']?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
+                                <a href="?page=staff&act=edit&id=<?=$d['id']?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit</a>
+                           <a href="?page=staff&act=del&id=<?=$d['id']?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
 
 
                             </td>                        

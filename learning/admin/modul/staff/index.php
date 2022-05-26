@@ -8,7 +8,7 @@ if (@$_SESSION['Admin']) {
 if (@$_SESSION['Admin']) {
 $sesi = @$_SESSION['Admin'];
 }
-$sql = mysqli_query($con,"SELECT * FROM users WHERE id = '$sesi'") or die(mysqli_error($con));
+$sql = mysqli_query($con,"SELECT * FROM staff WHERE id = '$sesi'") or die(mysqli_error($con));
 $data = mysqli_fetch_array($sql);
 
 ?>
@@ -87,9 +87,9 @@ $data = mysqli_fetch_array($sql);
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="?page=dosen"> 
+							<a class="nav-link" href="?page=staff"> 
 							<i class="fa fa-spin fa-gear icon-md" style="font-size:20px;"></i> &nbsp; 
-							<span class="menu-title"> DOSEN MANAGEMENT </span>
+							<span class="menu-title"> STAFF </span>
 							</a>
 						</li>
 						<li class="nav-item">
@@ -113,21 +113,21 @@ $data = mysqli_fetch_array($sql);
 					$act = @$_GET['act'];
 			
 					
-					if ($page=='dosen') {
+					if ($page=='staff') {
 						if ($act=='') {
-						include 'modul/dosen/data_dosen.php';
+						include 'modul/staff/data_staff.php';
 						}elseif ($act=='del') {
-						include 'modul/dosen/del_dosen.php';
+						include 'modul/staff/del_staff.php';
 						}elseif ($act=='confirm') {
-						include 'modul/dosen/confir_dosen.php';
+						include 'modul/staff/confir_staff.php';
 						}elseif ($act=='unconfirm') {
-						include 'modul/dosen/unconfir_dosen.php';
+						include 'modul/staff/unconfir_staff.php';
 						}elseif ($act=='add') {
-						include 'modul/dosen/add_dosen.php';
+						include 'modul/staff/add_staff.php';
 						}elseif ($act=='edit') {
-						include 'modul/dosen/edit_dosen.php';
+						include 'modul/staff/edit_staff.php';
 						}elseif ($act=='coba') {
-						include 'modul/dosen/coba.php';
+						include 'modul/staff/coba.php';
 					}
 					}elseif ($page=='kegiatan') {
 						if ($act=='') {
